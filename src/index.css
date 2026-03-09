@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  font-family: 'Inter', sans-serif;
+  background-color: #050505;
+  color: #FFFFFF;
+  --luxury-gold: #C5A059;
+}
+
+@theme {
+  --color-luxury-black: #050505;
+  --color-luxury-dark: #0A0A0A;
+  --color-luxury-gold: #C5A059;
+  --color-luxury-gold-light: #F1E5AC;
+  --color-luxury-silver: #A1A1A1;
+  --color-luxury-white: #FFFFFF;
+  --color-luxury-off-white: #FAF9F6;
+  --color-luxury-charcoal: #1A1A1A;
+
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+
+  --animate-reveal: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  
+  @keyframes reveal {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+@layer base {
+  h1, h2, h3, h4 {
+    @apply font-serif font-medium tracking-tight uppercase;
+  }
+  
+  body {
+    @apply antialiased selection:bg-luxury-gold selection:text-luxury-black font-sans;
+  }
+}
+
+/* Custom Cursor Placeholder */
+.custom-cursor {
+  @apply fixed w-4 h-4 bg-luxury-gold rounded-full pointer-events-none z-[9999] mix-blend-difference transition-transform duration-300;
+}
+
+/* OGroup Style Text Reveal */
+.text-reveal-wrapper {
+  overflow: hidden;
+  display: block;
+}
+
+.text-reveal {
+  display: block;
+  animation: var(--animate-reveal);
+}
+
+/* Asymmetrical Grid Helper */
+.asymmetric-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+}
+
+@utility section-padding {
+  @apply py-32 md:py-56 px-6 md:px-20;
+}
+
+@utility btn-luxury {
+  @apply px-12 py-5 border border-white/20 text-[10px] uppercase tracking-[0.4em] font-medium hover:bg-white hover:text-black transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)];
+}
