@@ -28,14 +28,14 @@ export default function Properties() {
   return (
     <section id="properties" className="section-padding bg-luxury-black">
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start mb-32">
+        <div className="flex flex-col md:flex-row justify-between items-start mb-20 md:mb-32 gap-8 md:gap-12">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="max-w-xl"
+            className="max-w-2xl"
           >
-            <h2 className="text-4xl md:text-8xl font-serif text-white mb-8 tracking-tighter">
+            <h2 className="text-4xl md:text-8xl 3xl:text-[10rem] font-serif text-white mb-8 tracking-tighter leading-[0.9]">
               CURATED <br />
               <span className="italic text-luxury-gold">COLLECTION.</span>
             </h2>
@@ -46,13 +46,13 @@ export default function Properties() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="text-luxury-silver text-[10px] uppercase tracking-[0.5em] md:mt-4 leading-relaxed max-w-xs"
+            className="text-luxury-silver text-[10px] md:text-xs 3xl:text-base uppercase tracking-[0.4em] md:mt-4 leading-relaxed max-w-xs 3xl:max-w-md"
           >
             Exclusively managed assets for the most discerning portfolios.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 lg:gap-16">
           {properties.map((prop, index) => (
             <motion.div
               key={index}
@@ -62,7 +62,7 @@ export default function Properties() {
               transition={{ duration: 1, delay: index * 0.2, ease: [0.76, 0, 0.24, 1] }}
               className={`group flex flex-col ${prop.size === 'lg' ? 'md:col-span-8' : 'md:col-span-4'}`}
             >
-              <div className="relative aspect-[4/5] md:aspect-auto md:h-[600px] overflow-hidden mb-8">
+              <div className="relative aspect-[4/5] md:aspect-auto md:h-[500px] lg:h-[600px] 3xl:h-[800px] overflow-hidden mb-6 md:mb-8">
                 <img
                   src={prop.image}
                   alt={prop.title}

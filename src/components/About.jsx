@@ -28,7 +28,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
-              className="text-5xl md:text-8xl lg:text-9xl font-serif text-white leading-[0.9] uppercase tracking-tighter"
+              className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl 3xl:text-[12rem] font-serif text-white leading-[0.9] uppercase tracking-tighter"
             >
               Uncompromised <br />
               <span className="italic text-luxury-gold">Vision.</span>
@@ -36,7 +36,7 @@ export default function About() {
           </div>
 
           {/* Main Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 lg:gap-24 items-start">
             
             {/* Left Column: Descriptive Text & Stats */}
             <motion.div 
@@ -44,25 +44,25 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="lg:col-span-5 space-y-16"
+              className="lg:col-span-5 space-y-12 md:space-y-16"
             >
-              <div className="space-y-8">
-                <p className="text-luxury-silver text-lg md:text-xl font-light leading-relaxed tracking-wide">
+              <div className="space-y-6 md:space-y-8">
+                <p className="text-luxury-silver text-lg md:text-xl 3xl:text-3xl font-light leading-relaxed tracking-wide">
                   At Wolf Commercial Real Estate, we define the next era of commercial architecture. Our legacy is built on fourteen years of relentless growth and uncompromising integrity.
                 </p>
-                <p className="text-luxury-silver/60 text-sm md:text-base font-light leading-relaxed max-w-md">
+                <p className="text-luxury-silver/60 text-sm md:text-base 3xl:text-xl font-light leading-relaxed max-w-md 3xl:max-w-2xl">
                   We specialize in high-stakes environments where precision meets performance. Every project is an opportunity to redefine the tri-state's skyline.
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-12 pt-12 border-t border-white/10">
+              <div className="grid grid-cols-2 gap-8 md:gap-12 pt-8 md:pt-12 border-t border-white/10">
                 <div className="space-y-2">
-                  <h4 className="text-4xl md:text-5xl font-serif text-white italic">14+</h4>
-                  <p className="text-[10px] uppercase tracking-[0.3em] text-luxury-gold">Years Legacy</p>
+                  <h4 className="text-3xl md:text-5xl 3xl:text-7xl font-serif text-white italic">14+</h4>
+                  <p className="text-[9px] md:text-[10px] 3xl:text-sm uppercase tracking-[0.3em] text-luxury-gold">Years Legacy</p>
                 </div>
                 <div className="space-y-2">
-                  <h4 className="text-4xl md:text-5xl font-serif text-white italic">3</h4>
-                  <p className="text-[10px] uppercase tracking-[0.3em] text-luxury-gold">Key Markets</p>
+                  <h4 className="text-3xl md:text-5xl 3xl:text-7xl font-serif text-white italic">3</h4>
+                  <p className="text-[9px] md:text-[10px] 3xl:text-sm uppercase tracking-[0.3em] text-luxury-gold">Key Markets</p>
                 </div>
               </div>
 
@@ -90,7 +90,7 @@ export default function About() {
                   <img
                     src="https://images.unsplash.com/photo-1577412647305-991150c7d163?q=80&w=2070&auto=format&fit=crop"
                     alt="Architecture"
-                    className="w-full h-full object-cover grayscale brightness-90 contrast-110 group-hover:scale-110 transition-transform duration-[2s] ease-out"
+                    className="w-full h-full object-cover grayscale brightness-90 contrast-110 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-[2s] ease-out"
                   />
                 </div>
 

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { Instagram, Linkedin, Twitter, Facebook } from 'lucide-react'
 
 const offices = [
@@ -25,18 +26,26 @@ export default function Footer() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
           <div className="lg:col-span-1">
-            <div className="text-3xl font-bold tracking-tighter mb-8">
+            <Link to="/" className="text-3xl font-bold tracking-tighter mb-8 block">
               <span className="font-serif italic text-luxury-gold">WCRE</span>
               <span className="ml-2 font-light text-luxury-silver">LUXURY</span>
-            </div>
+            </Link>
             <p className="text-luxury-silver font-light leading-relaxed mb-8">
               Redefining the standard of commercial excellence across the tri-state area and beyond.
             </p>
             <div className="flex gap-6 text-luxury-silver">
-              <Instagram size={20} className="hover:text-luxury-gold cursor-pointer transition-colors" />
-              <Linkedin size={20} className="hover:text-luxury-gold cursor-pointer transition-colors" />
-              <Twitter size={20} className="hover:text-luxury-gold cursor-pointer transition-colors" />
-              <Facebook size={20} className="hover:text-luxury-gold cursor-pointer transition-colors" />
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-luxury-gold transition-colors">
+                <Instagram size={20} />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-luxury-gold transition-colors">
+                <Linkedin size={20} />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-luxury-gold transition-colors">
+                <Twitter size={20} />
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-luxury-gold transition-colors">
+                <Facebook size={20} />
+              </a>
             </div>
           </div>
 
@@ -56,8 +65,8 @@ export default function Footer() {
             © 2026 Wolf Commercial Real Estate | CORFAC International
           </p>
           <div className="flex gap-12 text-xs uppercase tracking-[0.2em] text-luxury-silver">
-            <a href="#" className="hover:text-luxury-gold transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-luxury-gold transition-colors">Terms of Service</a>
+            <Link to="/contact" className="hover:text-luxury-gold transition-colors">Privacy Policy</Link>
+            <Link to="/contact" className="hover:text-luxury-gold transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

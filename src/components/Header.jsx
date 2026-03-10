@@ -102,36 +102,36 @@ export default function Header() {
             >
               <X size={32} strokeWidth={1} />
             </button>
+<nav className="flex flex-col items-center gap-y-4 md:gap-y-6 lg:gap-y-8 3xl:gap-y-12">
+  {navLinks.map((link, index) => (
+    <div key={link.name} className="overflow-hidden">
+      <motion.div
+        initial={{ y: "100%" }}
+        animate={{ y: 0 }}
+        transition={{ delay: 0.1 + index * 0.05, duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+      >
+        <Link
+          to={link.href}
+          className="text-3xl md:text-5xl lg:text-6xl 3xl:text-8xl font-serif text-white hover:text-luxury-gold italic tracking-tighter transition-all duration-500 flex items-end gap-4 md:gap-6"
+        >
+          <span className="text-[10px] md:text-xs 3xl:text-xl not-italic font-sans text-white/20 mb-2 md:mb-4 lg:mb-5 3xl:mb-8">{`0${index + 1}`}</span>
+          {link.name}
+        </Link>
+      </motion.div>
+    </div>
+  ))}
+</nav>
 
-            <nav className="flex flex-col items-center gap-y-4 md:gap-y-6">
-              {navLinks.map((link, index) => (
-                <div key={link.name} className="overflow-hidden">
-                  <motion.div
-                    initial={{ y: "100%" }}
-                    animate={{ y: 0 }}
-                    transition={{ delay: 0.1 + index * 0.05, duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-                  >
-                    <Link
-                      to={link.href}
-                      className="text-3xl md:text-6xl font-serif text-white hover:text-luxury-gold italic tracking-tighter transition-all duration-500 flex items-end gap-6"
-                    >
-                      {link.name}
-                    </Link>
-                  </motion.div>
-                </div>
-              ))}
-            </nav>
-
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
-              className="absolute bottom-7 flex gap-12 text-[9px] uppercase tracking-[0.4em] text-white/40"
-            >
-              <a href="#" className="hover:text-luxury-gold">Instagram</a>
-              <a href="#" className="hover:text-luxury-gold">LinkedIn</a>
-              <a href="#" className="hover:text-luxury-gold">Press</a>
-            </motion.div>
+<motion.div 
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.8 }}
+  className="absolute bottom-10 md:bottom-20 flex gap-8 md:gap-12 text-[9px] 3xl:text-sm uppercase tracking-[0.4em] text-white/40"
+>
+  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-luxury-gold">Instagram</a>
+  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-luxury-gold">LinkedIn</a>
+  <Link to="/contact" className="hover:text-luxury-gold">Press</Link>
+</motion.div>
           </motion.div>
         )}
       </AnimatePresence>
